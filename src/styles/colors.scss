@@ -1,0 +1,67 @@
+:root {
+  --color-content-primary: #000000;
+  --color-content-secondary: #757575;
+
+  --color-link: #0099F7;
+  --color-link-hover: #0070b6; /* todo: несуществующий цвет в дизайне */
+
+  --color-bg-base: #FFFFFF;
+  
+  --color-gray4: #F5F5F5;
+
+  --color-focused: #45C1FF;
+  --color-error: #FF4053;
+
+  --color-control-text-primary: var(--color-content-primary);
+  --color-control-text-secondary: var(--color-content-secondary);
+  --color-control-active: #141414;
+  --color-control-inactive: #E3E2E1;
+  --color-control-inactive-hover: #D4D2CF;
+  --color-control-text-disabled: #A3A3A3;
+
+  --color-control-bg-default: #F2F1F0;
+  --color-control-bg-hover: #EBEAE8;
+
+  --color-btn-text-primary: #FFFFFF;
+  --color-btn-bg-primary: #141414;
+  --color-btn-bg-primary-hover: #1F1F1F;
+  --color-btn-bg-primary-active: #141414;
+
+  --color-btn-text-secondary: #000000;
+  --color-btn-bg-secondary: #F2F1F0;
+  --color-btn-bg-secondary-hover: #EBEAE8;
+  --color-btn-bg-secondary-active: #E3E2E1;
+
+  --color-btn-bg-ghost: transparent;
+  --color-btn-bg-ghost-hover: #00000014;
+  --color-btn-bg-ghost-active: #00000014;
+
+  --color-btn-text-accent-secondary: #008AED;
+  --color-btn-bg-accent-primary: #00AAFF;
+  --color-btn-bg-accent-primary-hover: #0099F7;
+  --color-btn-bg-accent-primary-active: #008AED;
+
+  --color-btn-bg-accent-secondary: #CFEDFF;
+  --color-btn-bg-accent-secondary-hover: #A1DFFF;
+  --color-btn-bg-accent-secondary-active: #80D4FF;
+
+  --color-btn-text-pay-secondary: #8C4FE8;
+  --color-btn-bg-pay-primary: #965EEB;
+  --color-btn-bg-pay-primary-hover: #8C4FE8;
+  --color-btn-bg-pay-primary-active: #8144DB;
+
+  --color-btn-bg-pay-secondary: #E9DDFD;
+  --color-btn-bg-pay-secondary-hover: #D5BDFB;
+  --color-btn-bg-pay-secondary-active: #C2A0FA;
+
+  --color-btn-bg-success: #02D15C;
+  --color-btn-bg-success-hover: #00C257;
+  --color-btn-bg-success-active: #00B253;
+
+  --color-btn-bg-error: var(--color-error);
+  --color-btn-bg-error-hover: #F71B47;
+  --color-btn-bg-error-active: #E8003E;
+
+  --color-btn-text-disabled: #A3A3A3;
+  --color-btn-bg-disabled: #F2F1F0;
+}

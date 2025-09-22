@@ -1,0 +1,21 @@
+:root {
+  --border-radius: 16px;
+
+  --transition-s: 200ms;
+
+  --font-family-base: 'Manrope', sans-serif;
+}
+
+html {
+  font-family: var(--font-family-base);
+  font-size: 10px;
+  color: var(--color-content-primary);
+}
+
+p {
+  margin: 0;
+}
+
+.svg-icon {
+  fill: currentColor;
+}
