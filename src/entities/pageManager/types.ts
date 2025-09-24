@@ -13,72 +13,27 @@ export const CHANGE_TYPE = {
 type ValueOf<T> = T[keyof T]
 
 export type Platform = ValueOf<typeof PLATFORMS>
-export type ChangeType = ValueOf<typeof CHANGE_TYPE>
-export type ConfigSchema = Record<string, any>
 
-export interface ComponentConfig {
-  id: string
-  name: string
-  // TODO: Написать enum для типов компонентов
-  type: string
-  platform?: Platform
-  version: string
-  configSchema: ConfigSchema
-  defaultConfig: ConfigSchema
-  isActive: boolean
-  createdAt: Date
-  updatedAt: Date
+export const COMPONENT_KIND = {
+  BUTTON: 'vbutton',
+  COLUMN: 'column',
+  ROW: 'row',
+} as const
+// TODO: вынести в отдельное место для автоматического создания типа
+export type ComponentKind = ValueOf<typeof COMPONENT_KIND>
+
+export interface PageConfig {
+  states: Record<string, any>
+  root: StatelessComponent
 }
 
-export interface ScreenConfig {
-  id: string
-  name: string
-  description?: string
-  platform?: Platform
-  minAppVersion: string
-  isActive: boolean
-  createdAt: Date
-  updatedAt: Date
+export interface StatelessComponent {
+  kind: ComponentKind
+  id?: string
+  body?: Array<StatelessComponent>
+  value?: any
 }
 
-export interface CompositionConfig {
-  id: string
-  screenId: string
-  componentId: string
-  orderIndex: number
-  config: ConfigSchema
-  conditions: Record<string, string | Array<string>>
-  isActive: boolean
-  validFrom: Date
-  validTo: Date
-}
-
-export interface Experiment {
-  id: string
-  name: string
-  description?: string
-  key: string
-  platforms: Array<Platform>
-  minVersion: string
-  maxVersion: string
-  trafficPercentage: number
-  buckets: Record<string, number>
-  isActive: boolean
-  startDate: Date
-  endDate: Date
-}
-
-export interface ChangeHistory {
-  id: string
-  screenId: string
-  componentId: string
-  ChangeType: ChangeType
-  ChangeData: ChangeData
-  changedBy: string
-  changedAt: Date
-}
-
-export interface ChangeData {
-  old: Record<string, any>
-  new: Record<string, any>
+export interface StatefulComponent extends StatelessComponent {
+  state: string
 }

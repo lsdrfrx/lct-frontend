@@ -1,3 +1,7 @@
-import { pageManager, availableComponents } from './usePageManager'
+import type { StatelessComponent, StatefulComponent, PageConfig, ComponentKind } from './types'
 
-export { pageManager, availableComponents }
+import { pageManager, availableComponents, isValidComponent } from './usePageManager'
+
+export type { StatelessComponent, StatefulComponent, PageConfig, ComponentKind }
+
+export { pageManager, availableComponents, isValidComponent }
