@@ -1,4 +1,4 @@
 import DynamicRenderer from './DynamicRenderer.vue'
-import Stylebook from './Stylebook.vue'
+import ComponentShowcase from './ComponentShowcase.vue'
 
-export { DynamicRenderer, Stylebook }
+export { DynamicRenderer, ComponentShowcase }

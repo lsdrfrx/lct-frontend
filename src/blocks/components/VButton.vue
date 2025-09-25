@@ -1,14 +1,12 @@
 <template>
   <button :class="[size, color, textStyle]" @click="$emit('click')" :disabled="disabled">
-    <div class="col">
-      <div class="row">
-        <slot name="leading-icon"></slot>
-        <slot></slot>
-        <slot name="trailing-icon"></slot>
-      </div>
-      <div class="subtext">
-        <slot name="subtext"></slot>
-      </div>
+    <div class="row">
+      <slot name="leading-icon"></slot>
+      {{ text }}
+      <slot name="trailing-icon"></slot>
+    </div>
+    <div class="subtext" v-if="subtext">
+      {{ subtext }}
     </div>
   </button>
 </template>
@@ -20,6 +18,8 @@ import { computed } from 'vue';
 export type Size = 'xs' | 's' | 'm' | 'l' | 'xl';
 export type Color = 'primary' | 'secondary' | 'ghost' | 'accent' | 'accent2' | 'pay' | 'pay2' | 'success' | 'error';
 interface Props {
+  text: string,
+  subtext?: string,
   color?: Color,
   size?: Size,
   disabled?: boolean
@@ -56,6 +56,9 @@ button {
   border: none;
   border-radius: var(--border-radius);
   transition-duration: var(--transition-s);
+
+  display: flex;
+  flex-direction: column;
 
   color: var(--color-btn-text-primary);
   font-weight: 500;

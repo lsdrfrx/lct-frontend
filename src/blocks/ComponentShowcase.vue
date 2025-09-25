@@ -3,24 +3,21 @@
     <div class="showcase">
       <h2 class="title">Кнопки</h2>
       <div class="row">
-        <VButton>Я дефолтная кнопка</VButton>
-        <VButton size="m" color="primary">Я кнопка</VButton>
-        <VButton size="m" color="secondary">Я кнопка</VButton>
-        <VButton size="m" color="ghost">Я кнопка</VButton>
-        <VButton size="m" color="accent">Я кнопка</VButton>
-        <VButton size="m" color="accent2">
+        <VButton text="Я дефолтная кнопка" />
+        <VButton size="m" color="primary" text="Я кнопка" />
+        <VButton size="m" color="secondary" text="Я кнопка" />
+        <VButton size="m" color="ghost" text="Я кнопка" />
+        <VButton size="m" color="accent" text="Я кнопка" />
+        <VButton size="m" color="accent2" text="Я кнопка" subtext="с подтекстом если ты понимаешь о чём я">
           <template #leading-icon><SearchIcon /></template>
-  
-          <template #default>Я кнопка</template>
-          <template #subtext>с подтекстом если ты понимаешь о чём я</template>
   
           <template #trailing-icon><ChevronDownIcon /></template>
         </VButton>
-        <VButton size="m" color="pay">Я кнопка</VButton>
-        <VButton size="m" color="pay2">Я кнопка</VButton>
-        <VButton size="m" color="success">Я кнопка</VButton>
-        <VButton size="m" color="error">Я кнопка</VButton>
-        <VButton size="m" color="error" :disabled="true">Я кнопка</VButton>
+        <VButton size="m" color="pay" text="Я кнопка" />
+        <VButton size="m" color="pay2" text="Я кнопка" />
+        <VButton size="m" color="success" text="Я кнопка" />
+        <VButton size="m" color="error" text="Я кнопка" />
+        <VButton size="m" color="error" :disabled="true" text="Я кнопка" />
       </div>
     </div>
 
@@ -80,16 +77,8 @@
 </template>
 
 <script setup lang="ts">
-import IconButton from "./blocks/components/IconButton.vue";
-import ChevronDownIcon from "./blocks/components/icons/ChevronDownIcon.vue";
-import DeleteIcon from "./blocks/components/icons/DeleteIcon.vue";
-import FavoriteIcon from "./blocks/components/icons/FavoriteIcon.vue";
-import SearchIcon from "./blocks/components/icons/SearchIcon.vue";
-import TextButton from "./blocks/components/TextButton.vue";
-import VButton from "./blocks/components/VButton.vue";
-import VCheckbox from "./blocks/components/VCheckbox.vue";
-import VInput from "./blocks/components/VInput.vue";
-import VStepper from "./blocks/components/VStepper.vue";
+import { VButton, IconButton, TextButton, VCheckbox, VInput, VStepper } from "./components";
+import { ChevronDownIcon, DeleteIcon, FavoriteIcon, SearchIcon } from "./icons"
 </script>
 
 <style scoped lang="scss">

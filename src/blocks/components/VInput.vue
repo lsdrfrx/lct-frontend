@@ -3,7 +3,7 @@
     <input class="m20" type="text" :placeholder="placeholder" v-model="model" />
     <IconButton class="input-icon" @click="clearText">
 
-      <!-- TODO: это конченая иконка, её невозможно выровнять адекватно по центру. ещё внутри пришлось сделать width, height = 100% -->
+      <!-- TODO: выровнять нормально по центру.  (внутри: width, height = 100%) -->
       <CloseIcon style="height: 20px; width: 20px;" v-if="model"/>
     </IconButton>
   </div>
@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 import IconButton from './IconButton.vue';
-import CloseIcon from './icons/CloseIcon.vue';
+import CloseIcon from '../icons/CloseIcon.vue';
 
 interface Props {
   placeholder?: string,

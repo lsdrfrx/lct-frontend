@@ -2,14 +2,14 @@ import type { PATH } from '@/utils'
 
 import { createRouter, createWebHistory } from 'vue-router'
 import { pageManager } from '@/entities/pageManager'
-import { DynamicRenderer, Stylebook } from '@/blocks'
+import { DynamicRenderer, ComponentShowcase } from '@/blocks'
 
 const { fetchPageConfig } = pageManager()
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    { path: '/stylebook', name: 'stylebook', component: Stylebook },
+    { path: '/showcase', name: 'showcase', component: ComponentShowcase },
     { path: '/', name: 'index', component: DynamicRenderer, meta: { config: null } },
   ],
 })
