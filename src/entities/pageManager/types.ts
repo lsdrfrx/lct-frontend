@@ -15,9 +15,13 @@ type ValueOf<T> = T[keyof T]
 export type Platform = ValueOf<typeof PLATFORMS>
 
 export const COMPONENT_KIND = {
-  BUTTON: 'vbutton',
+  BUTTON: 'button',
   COLUMN: 'column',
   ROW: 'row',
+  CHECKBOX: 'checkbox',
+  INPUT: 'input',
+  STEPPER: 'stepper',
+  TEXT: 'text'
 } as const
 // TODO: вынести в отдельное место для автоматического создания типа
 export type ComponentKind = ValueOf<typeof COMPONENT_KIND>

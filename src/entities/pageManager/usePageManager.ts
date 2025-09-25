@@ -9,11 +9,19 @@ import { ref } from 'vue'
 import { createSharedComposable } from '@vueuse/core'
 import { VButton, VColumn, VRow } from '@/blocks/components'
 import { getPageConfig } from './api'
+import VCheckbox from '@/blocks/components/VCheckbox.vue'
+import VInput from '@/blocks/components/VInput.vue'
+import VStepper from '@/blocks/components/VStepper.vue'
+import VText from '@/blocks/components/VText.vue'
 
 export const availableComponents = {
-  vbutton: VButton,
+  button: VButton,
   column: VColumn,
   row: VRow,
+  checkbox: VCheckbox,
+  input: VInput,
+  stepper: VStepper,
+  text: VText
 } as const satisfies Record<ComponentKind, Component>
 
 export const isValidComponent = (kind?: string): kind is ComponentKind =>

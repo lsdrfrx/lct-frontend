@@ -53,8 +53,8 @@
       <h2 class="title">Чекбоксы</h2>
 
       <div class="col">
-        <VCheckbox :modelValue="false">Я чекбокс</VCheckbox>
-        <VCheckbox :modelValue="true">Я чекбокс</VCheckbox>
+        <VCheckbox text="Я чекбокс" :modelValue="false" />
+        <VCheckbox text="Я чекбокс" :modelValue="true" />
       </div>
     </div>
 

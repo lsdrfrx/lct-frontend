@@ -1,12 +1,18 @@
 <template>
   <label class="m20">
     <input type="checkbox" v-model="model" />
-    <slot></slot>
+    {{ text }}
   </label>
 </template>
 
 
 <script setup lang="ts">
+interface Props {
+  text: string
+}
+
+defineProps<Props>();
+
 defineEmits<{
   (e: 'click'): void
 }>();
