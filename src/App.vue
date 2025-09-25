@@ -1,11 +1,7 @@
-<script setup lang="ts">
-import "./styles";
-import ComponentShowcase from "@/ComponentShowcase.vue";
-</script>
-
 <template>
-  <ComponentShowcase />
+  <RouterView />
 </template>
 
-<style scoped lang="scss">
-</style>
+<script setup lang="ts"></script>
+
+<style scoped></style>

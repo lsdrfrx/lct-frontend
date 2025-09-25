@@ -1,0 +1,39 @@
+export const PLATFORMS = {
+  IOS: 'ios',
+  ANDROID: 'android',
+  WEB: 'web',
+} as const
+
+export const CHANGE_TYPE = {
+  CREATE: 'create',
+  UPDATE: 'update',
+  DELETE: 'delete',
+} as const
+
+type ValueOf<T> = T[keyof T]
+
+export type Platform = ValueOf<typeof PLATFORMS>
+
+export const COMPONENT_KIND = {
+  BUTTON: 'vbutton',
+  COLUMN: 'column',
+  ROW: 'row',
+} as const
+// TODO: вынести в отдельное место для автоматического создания типа
+export type ComponentKind = ValueOf<typeof COMPONENT_KIND>
+
+export interface PageConfig {
+  states: Record<string, any>
+  root: StatelessComponent
+}
+
+export interface StatelessComponent {
+  kind: ComponentKind
+  id?: string
+  body?: Array<StatelessComponent>
+  value?: any
+}
+
+export interface StatefulComponent extends StatelessComponent {
+  state: string
+}
