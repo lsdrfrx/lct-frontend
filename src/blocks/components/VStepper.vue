@@ -1,5 +1,5 @@
 <template>
-  <div class="stepper" :class="classes">
+  <div class="stepper" :class="classes" :style>
     <div class="main">
       <div class="btn-wrapper btn-wrapper--left" @click="decrease" :class="model <= 1 ? 'disabled' : ''">
         <svg class="svg-icon" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -35,30 +35,29 @@
 
 
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, reactive } from 'vue';
+import { layoutPropsToStyle, type LayoutProps } from './LayoutProps';
 
 type Preset = "default" | "overlay";
 
-interface Props {
+interface Props extends LayoutProps {
   preset?: Preset,
   hint?: string,
   error?: string
 }
 
-const { 
-  preset: kind = "default",
-  error
-} = defineProps<Props>();
-
+const props = defineProps<Props>();
 
 const model = defineModel({ default: 1 });
 const classes = computed(() => {
-  const list: string[] = [ kind ];
-  if (error) {
-    list.push('error');
+  const list: string[] = [ props.preset ?? "default" ];
+  if (props.error != null) {
+    list.push("error");
   }
   return list;
 });
+
+const style = reactive(layoutPropsToStyle(props));
 
 function decrease() {
   model.value = Math.max(1, model.value - 1);
@@ -73,6 +72,7 @@ function increase() {
 <style scoped lang="scss">
 .stepper {
   color: var(--color-control-text-primary);
+  max-width: fit-content;
 }
 
 .main {

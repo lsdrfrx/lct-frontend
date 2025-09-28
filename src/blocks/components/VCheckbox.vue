@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 interface Props {
-  text: string
+  text?: string
 }
 
 defineProps<Props>();

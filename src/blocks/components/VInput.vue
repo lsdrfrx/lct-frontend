@@ -1,11 +1,11 @@
 <template>
   <div class="input-container" :class="error ? 'error' : ''">
     <input class="m20" type="text" :placeholder="placeholder" v-model="model" />
-    <IconButton class="input-icon" @click="clearText">
+    <!-- <IconButton class="input-icon" @click="clearText"> -->
 
       <!-- TODO: выровнять нормально по центру.  (внутри: width, height = 100%) -->
-      <CloseIcon style="height: 20px; width: 20px;" v-if="model"/>
-    </IconButton>
+      <!-- <CloseIcon style="height: 20px; width: 20px;" v-if="model"/> -->
+    <!-- </IconButton> -->
   </div>
 </template>
 

@@ -1,8 +1,8 @@
 <template>
   <div :style class="column">
-    <div v-for="item in body" class="item">
+    <template v-for="item in body" class="item">
       <component :is="availableComponents[item.kind]" v-bind="item" />
-    </div>
+    </template>
   </div>
 </template>
 
@@ -10,16 +10,18 @@
 import { availableComponents } from '@/entities/pageManager'
 import type { StatelessComponent } from '@/entities/pageManager/types'
 import { reactive } from 'vue'
+import { layoutPropsToStyle, type LayoutProps } from './LayoutProps'
 
-interface Props {
+interface Props extends LayoutProps {
   body: Array<StatelessComponent>
-  spacing: number
+  spacing?: number
 }
 
 const props = defineProps<Props>()
 
 const style = reactive({
-  gap: `${props.spacing}px`,
+  gap: `${props.spacing ?? 0}px`,
+  ...layoutPropsToStyle(props)
 })
 </script>
 
@@ -27,6 +29,6 @@ const style = reactive({
 .column {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  overflow: hidden;
 }
 </style>

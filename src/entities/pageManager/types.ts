@@ -16,12 +16,19 @@ export type Platform = ValueOf<typeof PLATFORMS>
 
 export const COMPONENT_KIND = {
   BUTTON: 'button',
+  TEXTBUTTON: 'textbutton',
   COLUMN: 'column',
   ROW: 'row',
   CHECKBOX: 'checkbox',
   INPUT: 'input',
   STEPPER: 'stepper',
-  TEXT: 'text'
+  TEXT: 'text',
+  SPACER: 'spacer',
+  ICON: 'icon',
+  IMAGE: 'image',
+  ICONBUTTON: 'iconbutton',
+  CONTAINER: 'container',
+  SCROLLABLEROW: 'scrollable_row'
 } as const
 // TODO: вынести в отдельное место для автоматического создания типа
 export type ComponentKind = ValueOf<typeof COMPONENT_KIND>

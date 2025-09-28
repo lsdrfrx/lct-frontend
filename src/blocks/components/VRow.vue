@@ -1,8 +1,8 @@
 <template>
   <div :style class="row">
-    <div v-for="item in body" class="item">
+    <template v-for="item in body">
       <component :is="availableComponents[item.kind]" v-bind="item" />
-    </div>
+    </template>
   </div>
 </template>
 
@@ -10,23 +10,41 @@
 import { availableComponents } from '@/entities/pageManager'
 import type { StatelessComponent } from '@/entities/pageManager/types'
 import { reactive } from 'vue'
+import { layoutPropsToStyle, type LayoutProps } from './LayoutProps';
 
-interface Props {
+export type VAlign = 'top' | 'center' | 'bottom';
+
+interface Props extends LayoutProps {
   body: Array<StatelessComponent>
-  spacing: number
+  spacing?: number,
+  valign?: VAlign
 }
 
-const props = defineProps<Props>()
+const props = defineProps<Props>();
 
 const style = reactive({
-  gap: `${props.spacing}px`,
+  gap: `${props.spacing ?? 0}px`,
+  'align-items': valignToAlignItems(props.valign ?? 'top'),
+
+  ...layoutPropsToStyle(props),
 })
+
+function valignToAlignItems(valign: VAlign): string {
+  switch (valign) {
+    case 'top': return 'start';
+    case 'center': return 'center';
+    case 'bottom': return 'end';
+    default: {
+      console.log('valignToAlignItems: unknown valign value', valign);
+      return 'start';
+    }
+  }
+}
 </script>
 
 <style scoped lang="scss">
 .row {
   display: flex;
   flex-direction: row;
-  gap: 4px;
 }
 </style>

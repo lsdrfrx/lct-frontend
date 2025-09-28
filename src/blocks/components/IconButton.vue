@@ -1,10 +1,19 @@
 <template>
   <button @click="$emit('click')">
-    <slot></slot>
+    <component :is="availableComponents[icon.kind]" v-bind="icon" />
   </button>
 </template>
 
 <script setup lang="ts">
+import { availableComponents, type StatelessComponent } from '@/entities/pageManager';
+import type { LayoutProps } from './LayoutProps';
+
+interface Props extends LayoutProps {
+  icon: StatelessComponent
+}
+
+defineProps<Props>();
+
 defineEmits<{
   (e: 'click'): void
 }>();

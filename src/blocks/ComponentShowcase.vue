@@ -61,8 +61,9 @@
     <div class="showcase">
       <h2 class="title">Разное</h2>
 
-      <div class="col">
-        <TextButton>Я кнопкатекст</TextButton>
+      <!-- <div class="col">
+        <TextButton text="Я кнопкатекст" />
+        <TextButton text="Я кнопкатекст" color="pay" />
     
         <IconButton>
           <FavoriteIcon />
@@ -71,7 +72,7 @@
         <IconButton>
           <DeleteIcon />
         </IconButton>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

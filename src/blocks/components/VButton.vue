@@ -16,7 +16,7 @@ import '@/styles'
 import { computed } from 'vue';
 
 export type Size = 'xs' | 's' | 'm' | 'l' | 'xl';
-export type Color = 'primary' | 'secondary' | 'ghost' | 'accent' | 'accent2' | 'pay' | 'pay2' | 'success' | 'error';
+export type Color = 'primary' | 'secondary' | 'overlay-secondary' | 'ghost' | 'accent' | 'accent2' | 'pay' | 'pay2' | 'success' | 'error';
 interface Props {
   text: string,
   subtext?: string,
@@ -70,18 +70,23 @@ button {
 button {
   &.xs {
     padding: 0.7rem 1.2rem;
+    border-radius: 1rem;
   }
   &.s {
     padding: 1rem 1.5rem;
+    border-radius: 1.2rem;
   }
   &.m {
     padding: 1.2rem 1.8rem;
+    border-radius: 1.2rem;
   }
   &.l {
     padding: 1.6rem 1.9rem;
+    border-radius: 1.6rem;
   }
   &.xl {
     padding: 2rem 2.7rem;
+    border-radius: 2rem;
   }
 }
 
@@ -99,6 +104,13 @@ button {
     background-color: var(--color-btn-bg-secondary);
 
     @include bg-states(--color-btn-bg-secondary-hover, --color-btn-bg-secondary-active);
+  }
+
+  &.overlay-secondary {
+    color: var(--color-btn-text-secondary);
+    background-color: var(--color-btn-bg-overlay-secondary);
+
+    @include bg-states(--color-btn-bg-overlay-secondary-hover, --color-btn-bg-overlay-secondary-active);
   }
 
   &.ghost {
