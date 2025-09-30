@@ -37,7 +37,7 @@ const getComponentProps = (component?: StatelessComponent) => ({ ...component })
 
 const resolveComponent = (component?: StatelessComponent): boolean => {
   if (!isValidComponent(component?.kind)) {
-    errorMessage.value = 'Unknown component'
+    errorMessage.value = `Unknown component: ${component?.kind ?? "??"}`
     return false
   }
   if (!component.body) {

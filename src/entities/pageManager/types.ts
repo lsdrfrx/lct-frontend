@@ -41,7 +41,8 @@ export interface PageConfig {
 export interface StatelessComponent {
   kind: ComponentKind
   id?: string
-  body?: Array<StatelessComponent>
+  body?: Array<StatelessComponent>,
+  properties?: Array<any>,
   value?: any
 }
 
