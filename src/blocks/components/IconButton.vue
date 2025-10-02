@@ -9,10 +9,11 @@ import { availableComponents, type StatelessComponent } from '@/entities/pageMan
 import type { LayoutProps } from './LayoutProps';
 
 interface Props extends LayoutProps {
-  icon: StatelessComponent
+  body: StatelessComponent[] // single component - icon
 }
 
-defineProps<Props>();
+const props = defineProps<Props>();
+const icon = props.body[0];
 
 defineEmits<{
   (e: 'click'): void

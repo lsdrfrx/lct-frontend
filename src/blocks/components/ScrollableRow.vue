@@ -11,11 +11,11 @@ import { reactive } from 'vue'
 import { layoutPropsToStyle, type LayoutProps } from './LayoutProps';
 
 interface Props extends LayoutProps {
-  child: StatelessComponent
+  body: StatelessComponent[] // single component - child
 }
 
 const props = defineProps<Props>();
-console.log(props);
+const child = props.body[0];
 
 const style = reactive({
   ...layoutPropsToStyle(props),

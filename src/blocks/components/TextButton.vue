@@ -10,10 +10,11 @@ import { layoutPropsToStyle, type LayoutProps } from './LayoutProps';
 import { availableComponents, type StatelessComponent } from '@/entities/pageManager';
 
 interface Props extends LayoutProps {
-  text: StatelessComponent
+  body: StatelessComponent[] // single component - text
 }
 
 const props = defineProps<Props>()
+const text = props.body[0];
 
 defineEmits<{
   (e: 'click'): void

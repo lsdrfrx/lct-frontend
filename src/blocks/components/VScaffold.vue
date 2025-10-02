@@ -16,12 +16,13 @@
 import { availableComponents, type StatelessComponent } from '@/entities/pageManager';
 
 interface Props {
-  navBar?: StatelessComponent,
-  bottomBar?: StatelessComponent,
-  content: StatelessComponent
+  body: StatelessComponent[] // 3 components - nav bar, content, bottom bar
 }
 
-defineProps<Props>();
+const props = defineProps<Props>();
+const navBar = props.body[0];
+const content = props.body[1];
+const bottomBar = props.body[2];
 </script>
 
 <style scoped lang="scss">

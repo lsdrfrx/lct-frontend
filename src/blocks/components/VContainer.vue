@@ -12,11 +12,12 @@ import { availableComponents, type StatelessComponent } from '@/entities/pageMan
 export type BackgroundColor = 'default' | 'variant';
 
 interface Props extends LayoutProps {
-  child: StatelessComponent,
+  body: StatelessComponent[], // single component - child
   background: BackgroundColor
 }
 
 const props = defineProps<Props>();
+const child = props.body[0];
 const style = reactive(layoutPropsToStyle(props));
 
 </script>
