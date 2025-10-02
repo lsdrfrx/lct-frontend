@@ -9,6 +9,7 @@ import { ref } from 'vue'
 import { createSharedComposable } from '@vueuse/core'
 import { VButton, VColumn, VRow, VCheckbox, VInput, VStepper, VText, TextButton, VSpacer, VIcon, VImage, IconButton, VContainer, ScrollableRow } from '@/blocks/components'
 import { getPageConfig } from './api'
+import VScaffold from '@/blocks/components/VScaffold.vue'
 
 export const availableComponents = {
   button: VButton,
@@ -24,7 +25,8 @@ export const availableComponents = {
   image: VImage,
   iconbutton: IconButton,
   container: VContainer,
-  scrollable_row: ScrollableRow
+  scrollable_row: ScrollableRow,
+  scaffold: VScaffold
 } as const satisfies Record<ComponentKind, Component>
 
 export const isValidComponent = (kind?: string): kind is ComponentKind =>
